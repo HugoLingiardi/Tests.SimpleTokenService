@@ -23,7 +23,7 @@ public class MemoryUserRepository : IUserRepository
                 "Clayton Poitevin",
                 DateOnly.Parse("03/01/1991"),
                 "05838749913",
-                "claytin@clayton.com",
+                "clayton@clayton.com",
                 "abcde",
                 "salt",
                 new Role[] { new(Guid.NewGuid(), "accountant"), new(Guid.NewGuid(), "developer")}),
