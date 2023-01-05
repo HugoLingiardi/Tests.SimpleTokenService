@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.IdentityModel.Tokens;
+using Tests.TokenSample;
 using Tests.TokenSample.Interfaces;
 using Tests.TokenSample.Model;
 using Tests.TokenSample.Repositories;
@@ -33,6 +34,8 @@ builder.Services.AddAuthorization();
 builder.Services
     .AddJwksManager()
     .UseJwtValidation();
+
+builder.Services.AddSingleton<IAuthorizationMiddlewareResultHandler, SampleAuthorizationMiddlewareResultHandler>();
 
 var app = builder.Build();
 
